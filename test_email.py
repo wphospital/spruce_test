@@ -78,7 +78,6 @@ def main(
         from_email='noreply@wphospital.org',
         subject=email_subject,
         body_type='html',
-        attachment=fp,
         run=run_id,
         category='output',
         object='task',
