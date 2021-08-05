@@ -2,6 +2,7 @@ from sprucepy.notifier import Email, get_recipient_emails, get_recipients, get_r
 import click
 import datetime as dt
 import yaml
+import os
 from pytz import timezone
 
 
