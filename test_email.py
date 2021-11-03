@@ -45,6 +45,8 @@ def main(
 
     now = _now_pretty()
 
+    db_username = os.getenv('db_username')
+
     # Email body
     email_body = f'''
     <html>
@@ -55,6 +57,8 @@ def main(
             <p>
                 This is a test email from Spruce!
                 This email was generated <b>{now}</b>.
+
+                The db_username is {db_username}.
             </p>
             <p>
                 Please email <a href="mailto: jsege@wphospital.org">Jon Sege</a>
