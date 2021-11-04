@@ -43,6 +43,8 @@ def main(
     if smtpserver is None:
         smptserver = os.getenv('smptserver', 'SMTPRelay.montefiore.org')
 
+    default_smtp = f' (default)' if os.getenv('smptserver') is None else ''
+
     # Email subject
     # email_subject = 'Extracted data'
 
@@ -59,7 +61,7 @@ def main(
                 This is a test email from Spruce!
                 This email was generated <b>{now}</b>.
 
-                Sent using {smtpserver}.
+                Sent using {smtpserver}{default_smtp}.
             </p>
             <p>
                 Please email <a href="mailto: jsege@wphospital.org">Jon Sege</a>
