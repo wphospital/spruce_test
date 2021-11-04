@@ -41,9 +41,9 @@ def main(
     run_id = os.getenv('RUN_ID')
 
     if smtpserver is None:
-        smptserver = os.getenv('smptserver', 'SMTPRelay.montefiore.org')
+        smptserver = os.getenv('smtpserver', 'SMTPRelay.montefiore.org')
 
-    default_smtp = f' (default)' if os.getenv('smptserver') is None else ''
+    default_smtp = f' (default)' if os.getenv('smtpserver') is None else ''
 
     # Email subject
     # email_subject = 'Extracted data'
