@@ -32,20 +32,21 @@ def _now_pretty():
 
 @click.command()
 @click.option('--email_subject', default='Extracted data')
-@click.option('--smtpserver', default='smtp.stellarishealth.net')
+@click.option('--smtpserver')
 def main(
     email_subject,
     smtpserver
 ):
-    task_id = os.environ['TASK_ID']
-    run_id = os.environ['RUN_ID']
+    task_id = os.getenv('TASK_ID')
+    run_id = os.getenv('RUN_ID')
+
+    if smtpserver is None:
+        smptserver = os.getenv('smptserver', 'SMTPRelay.montefiore.org')
 
     # Email subject
     # email_subject = 'Extracted data'
 
     now = _now_pretty()
-
-    db_username = os.getenv('db_username')
 
     # Email body
     email_body = f'''
@@ -58,7 +59,7 @@ def main(
                 This is a test email from Spruce!
                 This email was generated <b>{now}</b>.
 
-                The db_username is {db_username}.
+                Sent using {smtpserver}.
             </p>
             <p>
                 Please email <a href="mailto: jsege@wphospital.org">Jon Sege</a>
