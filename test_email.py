@@ -41,7 +41,7 @@ def main(
     run_id = os.getenv('RUN_ID')
 
     if smtpserver is None:
-        smptserver = os.getenv('smtpserver', 'SMTPRelay.montefiore.org')
+        smtpserver = os.getenv('smtpserver', 'SMTPRelay.montefiore.org')
 
     default_smtp = f' (default)' if os.getenv('smtpserver') is None else ''
 
