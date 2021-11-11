@@ -8,11 +8,15 @@ import time
 # blah blah
 @click.command()
 @click.option('--name', '-n', default='Sprucey')
+@click.option('--sleeptime')
 @click.option('--sleep/--no-sleep', default=True)
-def main(name, sleep):
+def main(name, sleeptime, sleep):
     # biscuits
     if sleep:
-        sleepy_time = np.random.normal(loc=0.5, scale=0.3)
+        if sleeptime:
+            sleepy_time = sleeptime
+        else:
+            sleepy_time = np.random.normal(loc=0.5, scale=0.3)
         time.sleep(sleepy_time)
 
     if name == 'Sprucey':
