@@ -14,7 +14,7 @@ def main(name, sleeptime, sleep):
     # biscuits
     if sleep:
         if sleeptime:
-            sleepy_time = sleeptime
+            sleepy_time = int(sleeptime)
         else:
             sleepy_time = np.random.normal(loc=0.5, scale=0.3)
         time.sleep(sleepy_time)
