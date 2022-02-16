@@ -15,8 +15,8 @@ def main(name, sleep):
         sleepy_time = np.random.normal(loc=0.5, scale=0.3)
         time.sleep(sleepy_time)
 
-    if name == 'Sprucey':
-        name = os.getenv('db_username')
+    # if name == 'Sprucey':
+    #     name = os.getenv('db_username')
 
     print('Hello {}'.format(name))
 
