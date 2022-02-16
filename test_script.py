@@ -10,7 +10,8 @@ import time
 @click.option('--name', '-n', default='Sprucey')
 @click.option('--sleeptime')
 @click.option('--sleep/--no-sleep', default=True)
-def main(name, sleeptime, sleep):
+@click.option('--test-fail/--no-test-fail', default=False)
+def main(name, sleeptime, sleep, test_fail):
     # biscuits
     if sleep:
         if sleeptime:
@@ -21,6 +22,9 @@ def main(name, sleeptime, sleep):
 
     # if name == 'Sprucey':
     #     name = os.getenv('db_username')
+
+    if test_fail:
+        name = broken_name
 
     print('Hello {}'.format(name))
 
