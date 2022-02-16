@@ -24,7 +24,7 @@ def main(name, sleeptime, sleep, test_fail):
     #     name = os.getenv('db_username')
 
     if test_fail:
-        name = name
+        name = broken_name
 
     print('Hello {}'.format(name))
 
