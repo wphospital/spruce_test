@@ -22,7 +22,7 @@ def main(name, sleeptime, sleep, test_fail):
             sleepy_time = np.random.normal(loc=0.5, scale=0.3)
         time.sleep(sleepy_time)
 
-    if name == 'Sprucepy':
+    if name == 'Sprucey':
         print(default_name)
 
     if test_fail:
