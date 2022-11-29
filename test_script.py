@@ -5,6 +5,8 @@ import click
 import numpy as np
 import time
 
+default_name = os.getenv('name')
+
 # blah blah
 @click.command()
 @click.option('--name', '-n', default='Sprucey')
@@ -20,8 +22,8 @@ def main(name, sleeptime, sleep, test_fail):
             sleepy_time = np.random.normal(loc=0.5, scale=0.3)
         time.sleep(sleepy_time)
 
-    # if name == 'Sprucey':
-    #     name = os.getenv('db_username')
+    if name == 'Sprucepy':
+        print(default_name)
 
     if test_fail:
         name = broken_name
